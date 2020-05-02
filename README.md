@@ -25,10 +25,38 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. How would you describe preprocessing to someone new to CSS?
+
+Preprocessing is being able to think about and organize CSS more programmatically -
+including having access to reusable variables, functions and nested structure
+
 2. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
+
+I don't yet like nesting, or having to add many @media queries. Breaking the code into 
+modules is my favorite part - being able to view different parts of the code
+in separate files is very organized. 
+
 3. How would you explain the concept of a variable to someone new to programming?
+
+You can fill a Priority Box from USPS with anything you want - it is a container.
+A variable is essentially the same - it is a "name" that can hold multiple 
+different values
+
 4. What is the purpose of using functions in code?
+
+Functions organize code and they allow for reuse.  They encapsulate and 
+simplify the logic, in that you can call a "machine" or function you
+have either built or borrowed from a library ( either native JS, or outside
+developer ) and run your needed logic/expressions instead of writing
+them out each time.  A function could also be thought about as a reusable
+routine that's been previously written.
+
 5. What is a JSON data?
+
+Javascript Object Notation is a standardized format for sending/receiving data
+across the web.  It is basically in the form of a JavaScript Object.
+It is also replacing XML, and therefore reducing the number of times 
+developers heads bang against the keyboard.
+
 
 You may need to look up an answer but, you are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section *will* prevent you from passing this challenge.
 

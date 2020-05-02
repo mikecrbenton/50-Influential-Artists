@@ -203,84 +203,191 @@ const artists = [
 
 // 🖌🖼 M V P 🖼🖌 //
 
-/* Task 1: Practice accessing data above by console.log-ing following items:
+//======================================================================================
+/* Task 1: Practice accessing data above by console.log-ing following items:*/
+//======================================================================================
 
-(1) Name of the first artist in the array
-(2) Bio of the third artist in the array */
+//(1) Name of the first artist in the array
+console.log(artists[0].name);
+
+//(2) Bio of the third artist in the array 
+console.log(artists[2].name);
 
 
 
-/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+//======================================================================================
+/* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently 
+Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+//======================================================================================
+
+artists[8].name = "Vincent Van Gough";
+
+//RUN CODE
+console.log("TASK 2:");
+console.log("=======");
+
+console.log(artists[8].name);
 
 
 
+//======================================================================================
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
  * getArtistByIndex returns a string in the format `The artist at index {id} is {name}.`
  * 
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
- * it will return `The artist at index 0 is Amedeo Modigliani`.
-*/
-function getArtistByIndex(id, name) {
-    /* code here */
-  }
+ * it will return `The artist at index 0 is Amedeo Modigliani`. */
+//======================================================================================
+
+function getArtistByIndex( myArray, num ) {
   
-  /**
+  //CONSOLE TO SEE OUTPUT
+  console.log( `The artist at index ${num} is ${artists[num].name}` );
 
+  return `The artist at index ${num} is ${artists[num].name}`;
+}
 
+//CALL THE FUNCTION
+console.log("TASK 3:");
+console.log("=======");
+
+getArtistByIndex( artists, 2);
+  
+  
+
+//======================================================================================
 /* Task 4: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
  * removeArtist removes an artist from the dat array at the index.
  * 
  * For example, if removeArtist is invoked with the data and the number 0,
- * it will remove Amedeo Modigliani from our dataset.
-*/
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
+ * it will remove Amedeo Modigliani from our dataset.  */
+//======================================================================================
+
+function removeArtist( myArray, num, consoleFunction ) {
   
-  /**
+  //USING MY PREVIOUS FUNCTION TO SEE INTO ARRAY
+  consoleFunction(myArray, num );
+
+  artists.splice(num,1);
+
+  //USING MY PREVIOUS FUNCTION TO CONFIRM THE CHANGE
+  consoleFunction(myArray, num );
+
+  return artists;
+}
+
+//CALL THE FUNCTION
+console.log("TASK 4:");
+console.log("=======");
+
+const newArtistArray = removeArtist(artists, 2, getArtistByIndex );
 
 
-/* Task 5: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
 
-    /* Code here */
+//======================================================================================
+/* Task 5: Create a function called lotsOfArt() that takes artists as an argument and 
+returns an array with names of artists who painted more than 100 paintings */
+//======================================================================================
 
+function lotsOfArt( artists ){
+
+  let newArtistArray = [];
+
+  for( let i=0 ; i < artists.length ; i++ ){
+    
+    if( artists[i].paintings > 100 ){     
+      newArtistArray.push( artists[i].name );
+    }
   }
+  return newArtistArray;
+}
 
+//RUN THE CODE
+console.log("TASK 5:");
+console.log("=======");
 
-/* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
+console.log( lotsOfArt(artists) );
 
+//======================================================================================
+/* Task 6: Create a function called `addArtist` that can accept an array of information 
+and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 id: 21
 name: Your Name Here, 
 years: Your Birth Year - current day,
 genre: Web Design, 
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
+//======================================================================================
 
-function addArtist(/* Code here */){
+function addArtist( arrayOfInfo ){
 
-    /* Code here */
+  //OBJECT CREATION CODE IN HELPER FUNC() BELOW 
+  arrayOfInfo.push( createAnObject() );
 
-  }
+  Array.prototype.push.apply(artists,arrayOfInfo);
+
+  // PROVE IT WAS ADDED
+  console.log( artists[artists.length-1] );
+}
+
+//HELPER FUNCTION-----------------------------------------
+function createAnObject(){
+
+  return {
+    id: 20,
+    name: "Mike Benton", 
+    years: "2020 - 2021",
+    genre: "Web Design", 
+    nationality: 42,
+    bio: "Some string info, some string info, blah blah blah"
+    }
+}//------------------------------------------------------
+
+//RUN THE CODE
+console.log("TASK 6:");
+console.log("=======");
+
+//CREATE AN EMPTY ARRAY AN PASS IN TO ADDARTIST()
+let arrayToPassIn = [];
+addArtist( arrayToPassIn );
+
+
 
 
 
 
 
 // 🎨🎨 STRETCH 🎨🎨//
+//======================================================================================
+/* STRETCH 1: Create a function called get20s() that takes data as an argument and returns 
+an array with names of artists who were born the 20th century (1800-1900) */
+//======================================================================================
 
-/* STRETCH 1: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
+function get20s( data ){
 
-function get20s(/* Code here */){
+  let newArtistArray = [];
 
-    /* Code here */
-
+  for( let i=0 ; i < artists.length ; i++ ){
+    
+    if( artists[i].years.substring(0,4) >= "1800" &&
+        artists[i].years.substring(7,11) <= "1900" ){
+     
+           newArtistArray.push( artists[i].name );
+    }
   }
+  return newArtistArray;
+
+}
+
+//RUN THE CODE
+console.log("STRETCH 1:");
+console.log("=======");
+console.log( "Artists born in the 20th century are: " + get20s(artists) );
+
 
 /* STRETCH 2: Programtically console.log HTML element structure 
 

@@ -1,0 +1,59 @@
+
+header {
+    display: flex;
+    justify-content: center;
+    
+    nav {
+        font-weight: 700;
+        color: @charcoal-black;
+        margin: 2.5em 0 1.5em;
+        font-size: 1.6rem;
+        a{
+            .link-styles();
+
+            &:hover{
+                opacity: .7;
+            }
+        }
+        .separator{
+
+            @media @mobile500{
+                display: none;
+            }
+        }
+        @media @mobile500{
+            display: flex;
+            flex-direction: column;  
+            margin: 1.5em 0 1em;     
+            text-align: center;
+        }
+    }
+}
+
+.title-container {
+    width: 95%;
+    margin: 0 auto 1.5em;
+    background-image: url(../assets/home.png);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 70vh;
+
+    .jumbo-text{
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1em;
+        color: whitesmoke;
+
+        @media @mobile500{
+            font-size: 2rem;
+        }
+    }
+    .button{
+        .button-styles( whitesmoke, 600);
+    }
+    
+}
