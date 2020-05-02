@@ -2,3 +2,20 @@
     text-decoration: none;
     color: @charcoal-black;
 }
+
+.button-styles( @back-col, @weight ){
+    background-color: @back-col;
+    padding: .5em 1.5em;
+    margin-top: .75em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #606060 ;
+    font-weight: @weight ;
+    color: @charcoal-black;
+
+    &:hover{
+        opacity: .8;
+    }
+    &:active{
+        box-shadow: none;
+    }
+}

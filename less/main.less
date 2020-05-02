@@ -1,13 +1,34 @@
 
 .artists-container{
+    margin: 1.5em 0;
     display:flex;
     justify-content: space-evenly;
 
     .artist {
-        width: 35%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         img{
-            width:100%;
+            width: 80%;
+            height:200px;
+            border-radius: 5px;
+
+            &:hover{
+                opacity: .8;
+            }
+        }
+        a{
+            .link-styles();
+            font-size: 1.2rem;
+            margin: .75em 0;
+        }
+        .bio {
+            font-size: .8rem;
+            text-align: center;
+            line-height: .9rem;
+            font-weight: 600;
         }
     }
 }
