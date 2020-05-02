@@ -86,3 +86,42 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.global-container {
+  border: 2px red solid;
+  width: 70%;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+header nav {
+  font-weight: 700;
+  color: #404040;
+  margin: 3em 0 2em;
+  font-size: 1.6rem;
+}
+header nav a {
+  text-decoration: none;
+  color: #404040;
+}
+.title-container {
+  background-image: url(../assets/home.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.artists-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.artists-container .artist {
+  width: 35%;
+}
+.artists-container .artist img {
+  width: 100%;
+}
