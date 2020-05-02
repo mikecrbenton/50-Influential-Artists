@@ -110,6 +110,19 @@ header nav a {
 header nav a:hover {
   opacity: 0.7;
 }
+@media (max-width: 500px) {
+  header nav .separator {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em 0 1em;
+    text-align: center;
+  }
+}
 .title-container {
   width: 95%;
   margin: 0 auto 1.5em;
@@ -126,6 +139,11 @@ header nav a:hover {
   text-align: center;
   line-height: 1em;
   color: whitesmoke;
+}
+@media (max-width: 500px) {
+  .title-container .jumbo-text {
+    font-size: 2rem;
+  }
 }
 .title-container .button {
   background-color: whitesmoke;
@@ -172,4 +190,19 @@ header nav a:hover {
   text-align: center;
   line-height: 0.9rem;
   font-weight: 600;
+}
+@media (max-width: 800px) {
+  .artists-container .artist .bio {
+    margin-bottom: 2em;
+  }
+}
+@media (max-width: 800px) {
+  .artists-container .artist {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .artists-container {
+    flex-direction: column;
+  }
 }
