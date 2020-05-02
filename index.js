@@ -223,7 +223,10 @@ Vincent Van Dough. Use an array method to fix this issue and console.log() to ch
 artists[8].name = "Vincent Van Gough";
 
 //RUN CODE
-//console.log(artists[8]);
+console.log("TASK 2:");
+console.log("=======");
+
+console.log(artists[8].name);
 
 
 
@@ -238,12 +241,17 @@ artists[8].name = "Vincent Van Gough";
 //======================================================================================
 
 function getArtistByIndex( myArray, num ) {
-    
+  
+  //CONSOLE TO SEE OUTPUT
   console.log( `The artist at index ${num} is ${artists[num].name}` );
+
   return `The artist at index ${num} is ${artists[num].name}`;
 }
 
 //CALL THE FUNCTION
+console.log("TASK 3:");
+console.log("=======");
+
 getArtistByIndex( artists, 2);
   
   
@@ -258,41 +266,96 @@ getArtistByIndex( artists, 2);
  * it will remove Amedeo Modigliani from our dataset.  */
 //======================================================================================
 
-
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
+function removeArtist( myArray, num, consoleFunction ) {
   
-  /**
+  //USING MY PREVIOUS FUNCTION TO SEE INTO ARRAY
+  consoleFunction(myArray, num );
+
+  artists.splice(num,1);
+
+  //USING MY PREVIOUS FUNCTION TO CONFIRM THE CHANGE
+  consoleFunction(myArray, num );
+
+  return artists;
+}
+
+//CALL THE FUNCTION
+console.log("TASK 4:");
+console.log("=======");
+
+const newArtistArray = removeArtist(artists, 2, getArtistByIndex );
+
+
+
 
 //======================================================================================
 /* Task 5: Create a function called lotsOfArt() that takes artists as an argument and 
 returns an array with names of artists who painted more than 100 paintings */
 //======================================================================================
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt( artists ){
 
-    /* Code here */
+  let newArtistArray = [];
 
+  for( let i=0 ; i < artists.length ; i++ ){
+    
+    if( artists[i].paintings > 100 ){     
+      newArtistArray.push( artists[i].name );
+    }
   }
+  return newArtistArray;
+}
+
+//RUN THE CODE
+console.log("TASK 5:");
+console.log("=======");
+
+console.log( lotsOfArt(artists) );
 
 //======================================================================================
 /* Task 6: Create a function called `addArtist` that can accept an array of information 
 and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
-//======================================================================================
-
 id: 21
 name: Your Name Here, 
 years: Your Birth Year - current day,
 genre: Web Design, 
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
+//======================================================================================
 
-function addArtist(/* Code here */){
+function addArtist( arrayOfInfo ){
 
-    /* Code here */
+  //OBJECT CREATION CODE IN HELPER FUNC() BELOW 
+  arrayOfInfo.push( createAnObject() );
 
-  }
+  Array.prototype.push.apply(artists,arrayOfInfo);
+
+  // PROVE IT WAS ADDED
+  console.log( artists[artists.length-1] );
+}
+
+//HELPER FUNCTION-----------------------------------------
+function createAnObject(){
+
+  return {
+    id: 20,
+    name: "Mike Benton", 
+    years: "2020 - 2021",
+    genre: "Web Design", 
+    nationality: 42,
+    bio: "Some string info, some string info, blah blah blah"
+    }
+}//------------------------------------------------------
+
+//RUN THE CODE
+console.log("TASK 6:");
+console.log("=======");
+
+//CREATE AN EMPTY ARRAY AN PASS IN TO ADDARTIST()
+let arrayToPassIn = [];
+addArtist( arrayToPassIn );
+
+
 
 
 
@@ -304,11 +367,27 @@ function addArtist(/* Code here */){
 an array with names of artists who were born the 20th century (1800-1900) */
 //======================================================================================
 
-function get20s(/* Code here */){
+function get20s( data ){
 
-    /* Code here */
+  let newArtistArray = [];
 
+  for( let i=0 ; i < artists.length ; i++ ){
+    
+    if( artists[i].years.substring(0,4) >= "1800" &&
+        artists[i].years.substring(7,11) <= "1900" ){
+     
+           newArtistArray.push( artists[i].name );
+    }
   }
+  return newArtistArray;
+
+}
+
+//RUN THE CODE
+console.log("STRETCH 1:");
+console.log("=======");
+console.log( "Artists born in the 20th century are: " + get20s(artists) );
+
 
 /* STRETCH 2: Programtically console.log HTML element structure 
 
